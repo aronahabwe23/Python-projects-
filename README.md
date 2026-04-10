@@ -1,118 +1,155 @@
- Telco Customer Churn Prediction (Scikit-learn)
+Data Science Portfolio: Machine Learning & Geospatial Visualization
 
- Overview
+## Overview
+This repository contains two complementary data science projects demonstrating core competencies in **machine learning** and **geospatial data visualization** using Python. Together, they showcase the ability to work with structured datasets, build predictive models, and visualize real-world data interactively.
 
-This project implements a complete machine learning workflow using **Scikit-learn** to predict customer churn from the Telco Customer Churn dataset. 
-It covers data loading, preprocessing, exploratory data analysis (EDA), model training, evaluation, and feature importance visualization.
 
-Author;
+## Author
 
-AHABWE ARON
+**AHABWE ARON**
 
- Features
 
-* Upload and load a CSV dataset
-* Perform basic exploratory data analysis (EDA)
-* Handle missing values
-* Encode categorical variables using `LabelEncoder`
-* Train multiple machine learning models:
+
+## Project 1: Telco Customer Churn Prediction
+
+### Description
+
+This project implements a full machine learning pipeline to predict customer churn using the Telco Customer Churn dataset. 
+It includes preprocessing, model training, evaluation, and feature importance analysis.
+
+### Key Features
+
+* Data loading and exploration (EDA)
+* Data cleaning and preprocessing
+* Categorical encoding using `LabelEncoder`
+* Model training with:
 
   * Logistic Regression
   * Random Forest Classifier
   * K-Nearest Neighbors (KNN)
-* Evaluate models using:
+* Model evaluation using:
 
-  * Classification report (precision, recall, F1-score)
-  * Confusion matrix visualization
-* Visualize feature importance (Random Forest)
+  * Classification reports
+  * Confusion matrices
+* Feature importance visualization (Random Forest)
 
- Technologies Used
+### Workflow
+1. Upload dataset (CSV)
+2. Perform EDA (head, info, summary)
+3. Preprocess data (handle missing values, encode categories)
+4. Split into training and testing sets (80/20)
+5. Train models
+6. Evaluate performance
+7. Visualize results
 
+### Output
+* Classification metrics for each model
+* Confusion matrix plots
+* Feature importance chart
+
+### Limitations
+* Assumes target column is `Churn`
+* Uses basic encoding (LabelEncoder)
+* No hyperparameter tuning
+
+
+## Project 2: Geospatial Earthquake Data Visualization
+
+### Description
+This project visualizes real-time earthquake data using geospatial techniques. It retrieves data from the USGS API and displays it on an interactive world map.
+
+### Key Features
+* Fetch real-time earthquake data (GeoJSON)
+* Convert data into Pandas DataFrame
+* Interactive map using Folium
+* Depth-based color coding:
+
+  * Green: Shallow (< 50 km)
+  * Orange: Medium (50–150 km)
+  * Red: Deep (> 150 km)
+* Magnitude-based marker scaling
+* Interactive popups with earthquake details
+* Heatmap visualization of earthquake density
+
+### Workflow
+1. Fetch data from USGS API
+2. Process and structure data
+3. Create base map
+4. Add markers and styling
+5. Generate heatmap layer
+6. Display summary statistics
+
+### Output
+* Interactive map with earthquake markers
+* Heatmap of earthquake distribution
+* Statistical summaries
+
+### Limitations
+* Data limited to recent timeframe (e.g., last 24 hours)
+* Requires internet connection
+
+
+## Technologies Used
 * Python
 * Pandas
+* Scikit-learn
 * Matplotlib
 * Seaborn
-* Scikit-learn
-* Google Colab (for execution)
+* Folium
+* Requests
+* Branca
+* Google Colab / Jupyter Notebook
 
- Installation
 
-Install required dependencies:
+## Installation
+Install all required dependencies:
 
 ```bash
-pip install pandas scikit-learn matplotlib seaborn
+pip install pandas scikit-learn matplotlib seaborn folium requests branca
 ```
 
- Dataset
 
-The project expects the **Telco Customer Churn dataset (CSV format)**.
+## How to Run
 
-  Ensure the dataset contains a column named `Churn` (target variable).
-  All categorical columns will be automatically encoded.
+### Machine Learning Project
+1. Open the Python script in Google Colab or local environment
+2. Run the script
+3. Upload the Telco dataset when prompted
 
-How to Run
+### Geospatial Project
+1. Open the Jupyter Notebook
+2. Run all cells
+3. View the interactive map output
 
-1. Open the script in **Google Colab** or a Python environment.
-2. Run the script.
-3. Upload the Telco Customer Churn CSV file when prompted.
-4. The script will:
 
-   * Display dataset information
-   * Preprocess the data
-   * Train models
-   * Output evaluation metrics
-   * Display visualizations
+## Possible Enhancements
 
- Project Workflow
+### Machine Learning
 
-1. Data Upload & Loading
-   User uploads dataset via Colab interface
+* Hyperparameter tuning (GridSearchCV)
+* Cross-validation
+* Handling class imbalance (SMOTE)
+* Model persistence (saving models)
 
-2. Exploratory Data Analysis (EDA)
-   View dataset structure and summary statistics
+### Geospatial
 
-3. Data Preprocessing
- Remove missing values
- Encode categorical variables
+* Time-based filtering (weekly/monthly data)
+* Legend and UI controls
+* Export map to HTML
+* Animation of earthquake events over time
 
-4. Train-Test Split
- 80% training, 20% testing
 
-5. Model Training**
-     Logistic Regression
-     Random Forest
-     KNN
+## License
+This repository is intended for educational and academic purposes.
 
-6. Model Evaluation
 
-    Classification reports
-    Confusion matrices
-7. Feature Importance Analysis**
+## Summary
 
-Random Forest feature importance visualization
+This repository demonstrates:
 
- Output
+* End-to-end machine learning pipeline development
+* Real-world API data integration
+* Interactive geospatial visualization
+* Data analysis and interpretation skills
 
- Printed classification reports for each model
- Confusion matrix plots
- Feature importance bar chart
-
-Notes / Limitations
-
-Assumes target column is named `Churn`
-  Uses simple label encoding (may not be optimal for all categorical data)
-  Drops missing values instead of imputing them
-  No hyperparameter tuning is performed
-
- Possible Improvements
-
- Use `OneHotEncoder` instead of `LabelEncoder`
- Add hyperparameter tuning (GridSearchCV / RandomizedSearchCV)
- Implement cross-validation
- Handle class imbalance (SMOTE, class weights)
- Save trained models
- Build a simple UI or API for predictions
-
- License
-
-This project is for educational and practice purposes.
+It serves as a practical showcase of applied data science techniques.
